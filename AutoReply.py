@@ -32,7 +32,7 @@ def ConfUpd():
 
     if not os.path.exists('options.ini'):
         from subprocess import call
-        call(["python", "setup.py"])
+        call(["python", "config.py"])
     
     config.read('options.ini')
 
