@@ -49,8 +49,8 @@ def input_verify(phrase, phrase_confirm='', phrase_add='', phrase_int_or_string=
             return out_arr
 
 def API():
-    return [input_verify('Enter Telegram API ID (You can get it from my.telegram.com)\n', 'Use Telegram API ID "{out}"?',is_int=True),\
-        input_verify('Enter Telegram API Hash (You can get it from my.telegram.com)\n','Use Telegram API Hash "{out}"', cond='len(out) == 32',doesnt_meet_cond_str='Entered Telegram API Hash is not 32 chars long!\n')]
+    return [input_verify('Please enter Telegram API ID (You can get it from my.telegram.com)\n', 'Use Telegram API ID "{out}"?',is_int=True),\
+        input_verify('Please enter Telegram API Hash (You can get it from my.telegram.com)\n','Use Telegram API Hash "{out}"', cond='len(out) == 32',doesnt_meet_cond_str='Entered Telegram API Hash is not 32 chars long!\n')]
 
 
 def Files():
@@ -74,14 +74,14 @@ def Files():
         return ['None']
 
 def Chats():
-    return [input_verify('Enter chat to monitor\n', 'Add "{out}" to the list of monitored chats?', 'Add more chats to monitor?', 'Enter monitored chat by User ID?',is_int=None, multiple=True, confirm_default=[True,False,False]),\
-        input_verify('Enter chat to report in\n', 'Add "{out}" to the list of chats to report in?', 'Add more chats to report in?', 'Enter chat to report in by User ID?',is_int=None, multiple=True,confirm_default=[True,False,False])]
+    return [input_verify('Please enter monitored chat\n', 'Add "{out}" to the list of monitored chats?', 'Add more chats to monitor?', 'Enter monitored chat by User ID?',is_int=None, multiple=True, confirm_default=[True,False,False]),\
+        input_verify('Please enter admin chat\n', 'Add "{out}" to the list of admin chats?', 'Add more admin chats?', 'Enter admin chat by User ID?',is_int=None, multiple=True,confirm_default=[True,False,False])]
 
 def Patterns():
     return [input_verify('Enter trigger phrase\n', 'Add "{out}" to trigger phrases?', 'Add more trigger phrases?', multiple=True,confirm_default=[True,False])]
 
 def Replies():
-    return [input_verify('Enter reply phrase (Add {u} to show username)\n', 'Add "{out}" to list of replies?', 'Add more replies?', multiple=True,confirm_default=[True,False])]
+    return [input_verify('Enter reply ({u} replies with username of user, who said trigger phrase)\n', 'Add "{out}" to list of replies?'.format(u = '(User who said phrase)'), 'Add more replies?', multiple=True,confirm_default=[True,False])]
 
 def main():
     # Read Config
@@ -91,7 +91,7 @@ def main():
     # Function dictionary
     conf_dict = {'API': ['api_id','api_hash'],
                  'Files':['src_dir'],
-                 'Chats':['chat_mon','chat_rep'],
+                 'Chats':['chat_mon','chat_adm'],
                  'Patterns':['pattern_array'],
                  'Replies':['reply_array']}
 
