@@ -140,4 +140,4 @@ cython_debug/
 # sessions and config
 options.ini
 *.session
-.session-journal
+*.session-journal
