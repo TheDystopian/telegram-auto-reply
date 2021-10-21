@@ -34,10 +34,10 @@ def AutoReply():
         async def confupd(event):
 
             # You can write to the admin chat what to update
-            upd_dict = {'chat_mon':[1,'monitored','chats','monitor','monitored chats'],
-                        'chat_adm':[2,'admin','chats','admin chats'],
-                        'pattern_array':[3,'trigger','words','trigger words'],
-                        'reply_array':[4,'replies']
+            upd_dict = {'chat_mon':[1,'monitored','chats','monitor','all','monitored chats'],
+                        'chat_adm':[2,'admin','chats','all','admin chats'],
+                        'pattern_array':[3,'trigger','words','all','trigger words'],
+                        'reply_array':[4,'all','replies']
             }
 
             # "#update" detection

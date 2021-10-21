@@ -20,4 +20,4 @@ Type `python AutoReply.py` in the terminal to launch auto reply script.
 Setup script will launch automatically. It will guide you.
 After setup, Telethon will ask you to sign in to create session file
 
-Type `python config.py` in the terminal to configure. Config can be changed on the fly. To update it, you will need to enter `#update` to the admin chat. Then you will see options as a list. To update, type `#update <OptionToUpdate>` 
+Type `python config.py` in the terminal to configure. Config can be changed on the fly. To update it, you will need to enter `#update` to the admin chat. Then you will see options as a list. To update exact option, type `#update <OptionToUpdate>` in admin chat. If you want to update everything from list, type `#update all`.
